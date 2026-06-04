@@ -1,0 +1,26 @@
+{
+  "name": "silentdrop",
+  "version": "0.1.0",
+  "description": "Find silent data-loss bugs in your JS database's query layer — the LIKE / case-fold / comparison divergences that quietly return wrong rows.",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "demo": "node examples/dexie.mjs"
+  },
+  "keywords": [
+    "database",
+    "sql",
+    "like",
+    "correctness",
+    "indexeddb",
+    "dexie",
+    "query",
+    "testing",
+    "conformance"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dexie": "^4.4.3",
+    "fake-indexeddb": "^6.2.5"
+  }
+}
