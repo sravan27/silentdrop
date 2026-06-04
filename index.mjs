@@ -22,7 +22,7 @@ export const TESTS = [
       "LIKE to a RegExp without the dotAll (`s`) flag silently miss rows with \\n.",
     data: ["abc", "a\nb\nc", "axc"],
     input: "a%c",
-    expect: ["a\nb\nc", "axc"],
+    expect: ["abc", "a\nb\nc", "axc"], // all three: % matches 'b', '\nb\n', and 'x'. A no-dotAll regex impl misses the \n row.
   },
   {
     id: "like-metachar",

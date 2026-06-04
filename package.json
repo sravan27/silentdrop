@@ -20,6 +20,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "alasql": "^4.17.3",
     "dexie": "^4.4.3",
     "fake-indexeddb": "^6.2.5"
   }
