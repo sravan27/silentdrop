@@ -8,11 +8,17 @@ JS implementations and the SQL semantics they're meant to mirror make queries
 **silently drop or over‑match rows**. No error. No crash. Just wrong data — the
 worst kind of bug.
 
-This month I found and fixed this exact bug class in **five production databases**:
+As of this week I have shipped this exact bug class to **seven production databases**, 9 PRs in 7 days. Write-up: [9 silent-row-loss fixes in 7 days across 7 OSS databases](https://dev.to/sravan27/9-silent-row-loss-fixes-in-7-days-across-7-oss-databases-2nd-draft-56da).
 
 | Database | Bug | Status |
 |---|---|---|
 | PowerSync | LIKE/range semantics | merged (`powersync-service#644`) + paid hardening sprint |
+| PowerSync | CAST / div-by-zero / json_each | merged (`#645`, `#646`, `#647`) |
+| PowerSync | JOIN parsing loud error | PR open (`#662`) |
+| PowerSync | upper/lower ASCII case fold | PR open (`#663`) |
+| PowerSync | length() code points | PR open (`#664`) |
+| PowerSync | substring() code points | PR open (`#665`) |
+| TanStack DB | upper/lower/ilike ASCII case fold | PR open (`db#1574`) |
 | Rocicorp's Zero | range/comparison | merged (`mono#6083`, `#6088`) |
 | InstantDB | `$like`/`$ilike` newline | merged (`instant#2714`) |
 | ElectricSQL | LIKE newline + escaped wildcards | PR open (`electric#4437`) |
