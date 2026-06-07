@@ -77,6 +77,12 @@ fixes + regression tests across the whole operator surface (the same work behind
 
 **→ https://buy.polar.sh/polar_cl_z0eLsPUJeMwrcNs4MQPAQbKIM3Rbdb8fLDgVj2RZcmr**
 
+Smaller scope? **$500 Diagnostic Fix** — one operator I find a divergence on, repro + fix + PR delivered:
+
+**→ https://buy.polar.sh/polar_cl_G0fuUHHZ1tg9E0oe7gluje9gs44l8FAqVnfwS2AJkbw**
+
+Track record (June 2026): 8 silent-row-loss PRs at PowerSync (4 merged + 4 open), 2 each at Rocicorp Zero and Autumn (all merged), plus shipped fixes at InstantDB, ElectricSQL, Dexie, RxDB. Every bug is real and silent — no error, no log, just wrong rows.
+
 ## License
 
 MIT © Sravan Sridhar · [github.com/sravan27](https://github.com/sravan27)
