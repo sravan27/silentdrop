@@ -8,21 +8,20 @@ JS implementations and the SQL semantics they're meant to mirror make queries
 **silently drop or over‑match rows**. No error. No crash. Just wrong data — the
 worst kind of bug.
 
-As of this week I have shipped this exact bug class to **seven production databases**, 9 PRs in 7 days. Write-up: [9 silent-row-loss fixes in 7 days across 7 OSS databases](https://dev.to/sravan27/9-silent-row-loss-fixes-in-7-days-across-7-oss-databases-2nd-draft-56da).
+As of this week I have shipped this exact bug class to **seven production databases**, 11 PRs in 8 days (8 merged, 1 open, 3 closed after an operator-direction call from a maintainer). Write-up: [9 silent-row-loss fixes in 7 days across 7 OSS databases](https://dev.to/sravan27/9-silent-row-loss-fixes-in-7-days-across-7-oss-databases-2nd-draft-56da).
 
 | Database | Bug | Status |
 |---|---|---|
-| PowerSync | LIKE/range semantics | merged (`powersync-service#644`) + paid hardening sprint |
-| PowerSync | CAST / div-by-zero / json_each | merged (`#645`, `#646`, `#647`) |
-| PowerSync | JOIN parsing loud error | PR open (`#662`) |
-| PowerSync | upper/lower ASCII case fold | PR open (`#663`) |
-| PowerSync | length() code points | PR open (`#664`) |
-| PowerSync | substring() code points | PR open (`#665`) |
+| PowerSync | LIKE/range, CAST, div-by-zero, json_each, NOT-NULL semantics | merged: `#643`, `#644`, `#645`, `#646`, `#647` + paid hardening sprint |
+| PowerSync | JOIN on aliased primary, silent zero-row sync | open: `#662` |
+| PowerSync | upper/lower/length/substring ASCII vs Unicode | closed by maintainer — preferred direction is Unicode-aware JS; client-side override scoped instead (`#663`, `#664`, `#665`) |
 | TanStack DB | upper/lower/ilike ASCII case fold | PR open (`db#1574`) |
 | Rocicorp's Zero | range/comparison | merged (`mono#6083`, `#6088`) |
 | InstantDB | `$like`/`$ilike` newline | merged (`instant#2714`) |
 | ElectricSQL | LIKE newline + escaped wildcards | PR open (`electric#4437`) |
 | Dexie | case‑fold drops rows | PR open (`Dexie.js#2306`) |
+
+PowerSync's full audit summary with reproductions: [discussions/668](https://github.com/orgs/powersync-ja/discussions/668).
 
 `silentdrop` packages that audit so you can run it against **your** database.
 
