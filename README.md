@@ -2,6 +2,8 @@
 
 **Does your JavaScript database silently return the wrong rows?**
 
+→ **[silentdrop-sravan.vercel.app](https://silentdrop-sravan.vercel.app)** · the audit, the proof, and the booking page in one screen.
+
 Client‑side, embedded, and sync databases re‑implement SQL‑ish operators — `LIKE`,
 case‑insensitive match, range comparison — in JavaScript. Subtle gaps between those
 JS implementations and the SQL semantics they're meant to mirror make queries
